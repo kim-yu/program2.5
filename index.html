@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Size</title>
+    <style type="text/css">
+    body {
+        font-family: Arial;
+        font-size: 25px;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        width: 100%;
+        height: 100%;
+    }
+    #title {
+        position: absolute;
+        width: 100%;
+        top: 5%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-size: 40px;
+    }
+    #snowballPoem {
+        position: absolute;
+        width: 100%;
+        height: 50%;
+        top: 60%;
+        left: 60%;
+        transform: translate(-50%, -50%);
+    }
+    #level1 {
+        font-size: 10px;
+    }
+    #level2 {
+        font-size: 15px;
+    }
+    #level3 {
+        font-size: 20px;
+    }
+    #level4 {
+        font-size: 30px;
+    }
+    #level5 {
+        font-size: 40px;
+    }
+    #description {
+        position: absolute;
+        width: 100%;
+        top: 97%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-size: 20px;
+    }
+    </style>
+</head>
+<body>
+    <div id="title">
+        <p>Size</p>
+    </div>
+    <div id="snowballPoem">
+        <div class="container">
+            <div id="level1"></div>
+            <div id="level2"></div>
+            <div id="level3"></div>
+            <div id="level4"></div>
+            <div id="level5"></div>
+        </div>
+    </div>
+    <div id="description">A snowball poem created by Kimberly Yu for <a href="http://nickm.com/classes/the_word_made_digital/2018_spring/" target="_blank">CMS.609</a></div>
+</body>
+<script type="text/javascript">
+    level_1 = ['puny', 'teeny', 'bitsy', 'bitty', 'little', 'mini', 'petite', 'teensy', 'wee']
+    level_2 = ['small', 'miniature', 'meager', 'modest', 'slight', 'baby', 'trivial']
+    level_3 = ['medium', 'fair', 'moderate', 'normal', 'ordinary', 'so-so', 'average']
+    level_4 = ['large', 'big', 'broad', 'considerable', 'full', 'giant', 'grand', 'great', 'hefty', 'huge', 'immense', 'massive', 'sizable', 'vast']
+    level_5 = ['enormous', 'gigantic', 'grandiose', 'humongous', 'immeasurable', 'jumbo', 'monumental', 'stupendous', 'whopping', 'voluminous', 'colossal', 'gargantuan', 'mammoth', 'monstrous', 'tremendous']
+
+    function getRandomElements(array, n) {
+        const shuffled = array.sort(() => .5 - Math.random()); // shuffle  
+        var indices = shuffled.slice(0, n);
+        var words = '';
+        for (i in indices) {
+            words += shuffled[i] + ' ';
+        }
+        return words.slice(0, -1);
+    }
+
+    document.getElementById('level1').innerHTML = getRandomElements(level_1, 1);
+    document.getElementById('level2').innerHTML = getRandomElements(level_2, 2);
+    document.getElementById('level3').innerHTML = getRandomElements(level_3, 3);
+    document.getElementById('level4').innerHTML = getRandomElements(level_4, 4);
+    document.getElementById('level5').innerHTML = getRandomElements(level_5, 5);
+</script>
+</html>
